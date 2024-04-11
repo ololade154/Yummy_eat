@@ -1,0 +1,279 @@
+/*font url*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --cyan: #307d99;
+  --light-blue: #00bfff;
+  --label-color: #2d7d98;
+  --form-border-color: #707070;
+  --gold: #f89104;
+}
+
+/*Setting the default font-size of the root element to 10px*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8;
+  font-size: 2rem;
+}
+
+/*Hero Section*/
+
+.hero {
+  background: var(--cyan) url('../images/bg.jpg');
+  color: var(--white);
+  text-align: center;
+  padding-bottom: 4rem;
+  background-position: 12% 83%;
+}
+
+.hero a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header {
+  padding: 1rem 0;
+}
+
+section {
+  margin: 0 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 3.8rem 0;
+}
+
+h1 span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1 span::before {
+  content: '';
+  position: absolute;
+  width: 5rem;
+  height: 0.4rem;
+  bottom: 0;
+  background-color: var(--light-blue);
+  z-index: -1;
+  margin-left: -0.4rem;
+}
+
+.hero p {
+  font-weight: bold;
+  margin: 0 1rem 3.5rem;
+  font-size: 1.5rem;
+}
+
+/* FORMS */
+.form-container {
+  background-color: var(--white);
+  margin: 3.2rem -1rem 0;
+  padding: 3rem;
+}
+
+label {
+  color: var(--label-color);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+input[type='text'] {
+  border: 1px solid var(--form-border-color);
+  width: 100%;
+  padding: 1.3rem;
+  outline: 0;
+  border-radius: 0.7rem;
+  margin-top: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-container p {
+  color: gray;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+  font-size: 1.3rem;
+  margin-top: 0.8rem;
+}
+/*Buttons*/
+button {
+  background-color: var(--gold);
+  border: 0;
+  outline: 0;
+  width: 100%;
+  color: var(--white);
+  font-weight: bold;
+  padding: 1.3rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  background-color: rgb(216, 126, 1);
+  font-weight: normal;
+}
+.main {
+  margin: 0;
+}
+.right-col {
+  text-align: center;
+  margin: 3rem 1rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  position: relative;
+  font-size: 1.8rem;
+  z-index: 1;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  width: 14rem;
+  height: 0.8rem;
+  bottom: 0;
+  background-color: var(--light-blue);
+  z-index: -1;
+  margin-left: -0.4rem;
+}
+.main p {
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+}
+
+img {
+  width: 100%;
+}
+
+@media screen and (min-width: 730px) {
+  section {
+    margin: 0 4rem;
+  }
+  .form-container {
+    margin: 2rem -4rem 0;
+  }
+}
+@media screen and (min-width: 930px) {
+  .hero {
+    text-align: left;
+  }
+  .hero p {
+    margin: 0 0 3.5rem;
+  }
+  .hero section {
+    width: 65%;
+  }
+  .form-container {
+    margin: 2rem 0 0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 10px rbga(0, 0, 0, 0.3);
+  }
+  form {
+    display: flex;
+  }
+  .form-left {
+    width: 70%;
+  }
+  label {
+    margin: 0;
+  }
+  button {
+    height: fit-content;
+    font-size: 1.3rem;
+    margin-left: 1.3rem;
+    margin-top: 4.2rem;
+    width: 30%;
+  }
+  .hero p {
+    margin-bottom: 0;
+  }
+  section.main {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: 'bowl content';
+  }
+  .right-col {
+    grid-area: content;
+    padding: 0 10%;
+    text-align: left;
+  }
+  img {
+    grid-area: bowl;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+
+.top {
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.overlay{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: rgba(0,0,0,.9);
+  z-index: 2;
+  place-content: center;
+  color: var(--white);
+  display: none;
+  opacity: 0;
+}
+
+.animate-overlay{
+  animation: overlay 3s forwards;
+}
+@keyframes overlay {
+  0%{
+    opacity: 0;
+  }
+  30%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
